@@ -1,6 +1,8 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 
-export const client = new MongoClient(process.env.MONGODB_URI as string, {
+const uri = process.env.MONGODB_URI as string;
+
+export const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
